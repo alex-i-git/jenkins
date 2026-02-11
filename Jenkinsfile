@@ -194,9 +194,9 @@ pipeline {
                         sh """
                             echo "=== Dry Run: Проверка установки ==="
                             helm upgrade --install ${params.RELEASE_NAME} . \
-                                --namespace ${NAMESPACE} \
-                                -f ../values-${params.ENVIRONMENT}.yaml \
-                                --set version=${env.BUILD_ID} \
+                                --namespace "\${NAMESPACE}" \
+                                -f ../values-"\${params.ENVIRONMENT}".yaml \
+                                --set version="\${env.BUILD_ID}" \
                                 --set buildDate=$(date -u +'%Y-%m-%dT%H:%M:%SZ') \
                                 --dry-run \
                                 --debug \
