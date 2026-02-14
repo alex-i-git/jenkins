@@ -1,4 +1,4 @@
 FROM alpine
-RUN apk add --no-cache curl wget busybox-extras awscli
+RUN apk add --no-cache curl wget busybox-extras
 CMD ls -la /dev
 
