@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo "Building docker image"
                 dir ('helm-chart/docker/cli') {
-                    sh 'echo ${params.IMAGE_NAME}'
+                    sh 'echo ${parameters.IMAGE_NAME}'
                 }
             }
         }
