@@ -15,9 +15,6 @@ pipeline {
                 sh 'uname -a'
             }
         }
-
-    }
-    stages {
         stage("Stage 2") {
             steps {
                 sh 'lscpu'
@@ -25,4 +22,5 @@ pipeline {
         }
 
     }
+    
 }
