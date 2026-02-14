@@ -7,6 +7,13 @@ pipeline {
         label 'docker'
     }
 
+    parameters {
+        string(
+            name: 'IMAGE_NAME',
+            defaultValue: 'alpine/newimage',
+            description: 'Имя образа'
+        ) 
+    }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
         timestamps()
